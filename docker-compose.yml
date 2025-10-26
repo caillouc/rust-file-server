@@ -1,0 +1,11 @@
+services:
+  flash-backend:
+    build: .
+    container_name: flash-backend
+    ports:
+      - "3030:3030"
+    volumes:
+      - "./files:/app/files"
+    environment:
+      - PORT=3030
+    restart: unless-stopped
