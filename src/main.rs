@@ -32,8 +32,7 @@ async fn main() {
             }
         });
 
-    let routes = root.or(files)
-        .with(warp::cors().allow_any_origin());
+    let routes = root.or(files);
 
     warp::serve(routes)
         .run(([0, 0, 0, 0], port))
